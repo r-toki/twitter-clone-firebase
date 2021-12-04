@@ -1,2 +1,2 @@
-export * from "./command-v1";
+export * from "./likes";
 export * from "./users";

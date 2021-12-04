@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "module": "esnext",
+    "module": "CommonJS",
     "outDir": "./lib/admin",
     "baseUrl": ".",
     "paths": {

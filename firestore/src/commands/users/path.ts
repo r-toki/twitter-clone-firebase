@@ -1,4 +1,6 @@
-const USERS = "users";
+import { COMMAND_V1 } from "../command-v1";
+
+const USERS = [COMMAND_V1, "users"].join("/");
 const TWEETS = "tweets";
 
 export const users = {
