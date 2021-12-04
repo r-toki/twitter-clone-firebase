@@ -10,14 +10,14 @@ type _User = {
 };
 
 type _Tweet = {
-  creator: {
-    displayName: string;
-    avatar: StorageItem | null;
-  };
   content: string;
   images: StorageItem[];
   likeCount: number;
   createdAt: Timestamp;
+  creator: {
+    displayName: string;
+    avatar: StorageItem | null;
+  };
 };
 
 export namespace User {
