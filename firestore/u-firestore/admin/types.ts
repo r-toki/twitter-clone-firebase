@@ -1,2 +1,2 @@
-import type { Timestamp } from "firebase-admin/firestore";
-export { Timestamp };
+import type { DocumentReference, Timestamp } from "firebase-admin/firestore";
+export { DocumentReference, Timestamp };
