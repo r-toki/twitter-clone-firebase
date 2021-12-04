@@ -1,0 +1,41 @@
+{
+  "name": "firestore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "rimraf": "^3.0.2",
+    "tsc-alias": "^1.4.2",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "firebase": "^9.6.0",
+    "firebase-admin": "^10.0.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "yarn build:web && yarn build:admin",
+    "build:web": "tsc -p tsconfig.web.json",
+    "postbuild:web": "node ./tsc-alias-web.mjs",
+    "build:admin": "tsc -p tsconfig.admin.json",
+    "postbuild:admin": "node ./tsc-alias-admin.mjs"
+  },
+  "exports": {
+    "./admin": "./lib/admin/src/index.js",
+    "./web": "./lib/web/src/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "admin": [
+        "./lib/admin/src/index.d.ts"
+      ],
+      "web": [
+        "./lib/web/src/index.d.ts"
+      ]
+    }
+  }
+}

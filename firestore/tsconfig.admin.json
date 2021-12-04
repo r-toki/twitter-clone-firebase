@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "./lib/admin",
+    "baseUrl": ".",
+    "paths": {
+      "@u-firestore": ["./u-firestore/admin"]
+    }
+  },
+  "include": ["src", "u-firestore/admin"]
+}
