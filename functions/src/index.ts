@@ -1,5 +1,5 @@
 import * as functions from "firebase-functions";
-import { Commands } from "../firestore/src";
+import { Commands } from "./firestore";
 
 export const helloWorld = functions
   .region("asia-northeast1")
