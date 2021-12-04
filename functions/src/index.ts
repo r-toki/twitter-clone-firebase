@@ -1,8 +1,8 @@
 import * as functions from "firebase-functions";
-import { users } from "../firestore/src/commands";
+import { Commands } from "../firestore/src";
 
 export const helloWorld = functions
   .region("asia-northeast1")
   .https.onRequest((request, response) => {
-    response.send(users.doc("1").tweets.path);
+    response.send(Commands.users.doc("1").tweets.path);
   });
