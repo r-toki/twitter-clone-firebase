@@ -6,7 +6,9 @@
     "shell": "yarn build && firebase functions:shell",
     "start": "yarn shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "predeploy:functions": "yarn add file:./firestore",
+    "postdeploy:functions": "rimraf ./firestore  && yarn add link:../firestore"
   },
   "engines": {
     "node": "14"
@@ -14,11 +16,13 @@
   "main": "lib/index.js",
   "dependencies": {
     "firebase-admin": "10",
-    "firebase-functions": "^3.14.1"
+    "firebase-functions": "^3.14.1",
+    "firestore": "link:../firestore"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0",
-    "typescript": "^3.8.0"
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.2"
   },
   "private": true
 }

@@ -26,7 +26,7 @@
     "postbuild:web": "node ./tsc-alias-web.mjs",
     "build:admin": "tsc -p tsconfig.admin.json",
     "postbuild:admin": "node ./tsc-alias-admin.mjs",
-    "postbuild": "cpx -C './lib/admin/**' ../functions/firestore"
+    "predeploy:functions": "cpx -C './**' ../functions/firestore"
   },
   "exports": {
     "./admin": "./lib/admin/src/index.js",

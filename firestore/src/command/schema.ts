@@ -1,7 +1,7 @@
-import { Timestamp } from "@u-firestore";
+import { DocumentReference, Timestamp } from "@u-firestore";
 import { StorageItem } from "src/types";
 
-type _User = {
+export type User = {
   email: string;
   displayName: string;
   selfIntroduction: string;
@@ -10,15 +10,19 @@ type _User = {
   updatedAt: Timestamp;
 };
 
-type _Tweet = {
+export type UserTweet = {
   content: string;
   images: StorageItem[];
   createdAt: Timestamp;
 };
 
-export namespace User {
-  export type Schema = _User;
-  export namespace Tweet {
-    export type Schema = _Tweet;
-  }
-}
+export type Like = {
+  creator: {
+    id: string;
+    ref: DocumentReference;
+  };
+  tweet: {
+    id: string;
+    ref: DocumentReference;
+  };
+};

@@ -6,8 +6,11 @@
   "functions": {
     "predeploy": [
       "npm --prefix ./firestore run build",
+      "npm --prefix ./firestore run predeploy:functions",
+      "npm --prefix ./functions run predeploy:functions",
       "npm --prefix ./functions run build"
-    ]
+    ],
+    "postdeploy": ["npm --prefix ./functions run postdeploy:functions"]
   },
   "hosting": {
     "public": "public",

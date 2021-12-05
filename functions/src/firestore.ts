@@ -1,1 +1,1 @@
-export * from "../firestore/src/index";
+export * from "firestore/admin";
