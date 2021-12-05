@@ -1,7 +1,22 @@
+import { addDoc, collection, serverTimestamp, Timestamp } from "@firebase/firestore";
+import { Command } from "firestore/web";
 import type { NextPage } from "next";
-import { ReactNode, VFC } from "react";
+import { ReactNode, useEffect, VFC } from "react";
+
+import { db } from "../config/firebaseApp";
 
 const Home: NextPage = () => {
+  const user: Command.Schema.User = {
+    email: "user-1@example.com",
+    displayName: "user-1",
+    selfIntroduction: "My name is user-1. Nice to meet you.",
+    avatar: null,
+    createdAt: serverTimestamp() as Timestamp,
+    updatedAt: serverTimestamp() as Timestamp,
+  };
+  useEffect(() => {
+    addDoc(collection(db, Command.Path.users()), user);
+  }, []);
   return <HomeLayout main={<Main />} left={<Left />} right={<Right />} />;
 };
 
