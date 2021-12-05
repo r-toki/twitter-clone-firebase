@@ -13,7 +13,7 @@
     "postdeploy": ["npm --prefix ./functions run postdeploy:functions"]
   },
   "hosting": {
-    "public": "public",
+    "public": "client/out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
   "storage": {
