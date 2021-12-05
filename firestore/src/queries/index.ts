@@ -1,1 +1,2 @@
-export * from "./users";
+export * as Path from "./path";
+export * as Schema from "./schema";

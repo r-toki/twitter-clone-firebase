@@ -1,7 +1,7 @@
 import { Timestamp } from "@u-firestore";
 import { StorageItem } from "src/types";
 
-type _User = {
+export type User = {
   displayName: string;
   selfIntroduction: string;
   avatar: StorageItem | null;
@@ -9,7 +9,7 @@ type _User = {
   updatedAt: Timestamp;
 };
 
-type _Tweet = {
+export type UserTweet = {
   content: string;
   images: StorageItem[];
   likeCount: number;
@@ -19,10 +19,3 @@ type _Tweet = {
     avatar: StorageItem | null;
   };
 };
-
-export namespace User {
-  export type Schema = _User;
-  export namespace Tweet {
-    export type Schema = _Tweet;
-  }
-}
