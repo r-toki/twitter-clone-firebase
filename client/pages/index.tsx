@@ -1,9 +1,9 @@
 import { addDoc, collection, serverTimestamp, Timestamp } from "@firebase/firestore";
-import { Command } from "firestore/web";
 import type { NextPage } from "next";
 import { ReactNode, useEffect, VFC } from "react";
 
 import { db } from "../config/firebaseApp";
+import { Command } from "../utils/firestore";
 
 const Home: NextPage = () => {
   const user: Command.Schema.User = {
