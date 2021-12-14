@@ -1,8 +1,8 @@
-import { DocumentReference, Timestamp } from "@u-firestore";
-import { StorageItem } from "src/types";
+import { Timestamp } from "@u-firestore";
 
-export type User = {
-  email: string;
+import { IdOrRef, StorageItem, WithIdAndRef } from "../types";
+
+export type UserFields = {
   displayName: string;
   selfIntroduction: string;
   avatar: StorageItem | null;
@@ -10,19 +10,18 @@ export type User = {
   updatedAt: Timestamp;
 };
 
-export type UserTweet = {
+export type User = WithIdAndRef<UserFields>;
+
+export type UserTweetFields = {
   content: string;
   images: StorageItem[];
   createdAt: Timestamp;
+  creator: Pick<User, IdOrRef>;
 };
 
-export type Like = {
-  creator: {
-    id: string;
-    ref: DocumentReference;
-  };
-  tweet: {
-    id: string;
-    ref: DocumentReference;
-  };
+export type UserTweet = WithIdAndRef<UserTweetFields>;
+
+export type LikeFields = {
+  creator: Pick<User, IdOrRef>;
+  tweet: Pick<UserTweet, IdOrRef>;
 };

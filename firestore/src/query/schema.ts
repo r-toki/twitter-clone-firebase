@@ -1,21 +1,15 @@
-import { Timestamp } from "@u-firestore";
-import { StorageItem } from "src/types";
+import { IdOrRef } from "src/types";
 
-export type User = {
-  displayName: string;
-  selfIntroduction: string;
-  avatar: StorageItem | null;
-  createdAt: Timestamp;
-  updatedAt: Timestamp;
-};
+import { Command } from "../index";
+
+export type User = Pick<
+  Command.Schema.User,
+  IdOrRef | "displayName" | "selfIntroduction" | "avatar"
+>;
 
 export type UserTweet = {
-  content: string;
-  images: StorageItem[];
-  likeCount: number;
-  createdAt: Timestamp;
-  creator: {
-    displayName: string;
-    avatar: StorageItem | null;
+  creator: Pick<Command.Schema.User, IdOrRef | "displayName" | "avatar">;
+  tweet: Pick<Command.Schema.UserTweet, IdOrRef | "content" | "images" | "createdAt"> & {
+    favoriteCount: number;
   };
 };
