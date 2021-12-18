@@ -1,5 +1,7 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll": true
-  }
+  },
+  "css.validate": false,
+  "scss.validate": false
 }
