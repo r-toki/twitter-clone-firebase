@@ -1,6 +1,6 @@
 import { Timestamp } from "@u-firestore";
 
-import { IdOrRef, StorageItem, WithIdAndRef } from "../types";
+import { IdOrRef, StorageItem, WithIdAndRef } from "./types";
 
 export type UserFields = {
   displayName: string;
@@ -10,8 +10,6 @@ export type UserFields = {
   updatedAt: Timestamp;
 };
 
-export type User = WithIdAndRef<UserFields>;
-
 export type UserTweetFields = {
   content: string;
   images: StorageItem[];
@@ -19,9 +17,11 @@ export type UserTweetFields = {
   creator: Pick<User, IdOrRef>;
 };
 
-export type UserTweet = WithIdAndRef<UserTweetFields>;
-
 export type LikeFields = {
   creator: Pick<User, IdOrRef>;
   tweet: Pick<UserTweet, IdOrRef>;
 };
+
+export type User = WithIdAndRef<UserFields>;
+export type UserTweet = WithIdAndRef<UserTweetFields>;
+export type Like = WithIdAndRef<LikeFields>;

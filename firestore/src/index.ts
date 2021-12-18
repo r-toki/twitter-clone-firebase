@@ -1,2 +1,2 @@
-export * as Command from "./command";
-export * as Query from "./query";
+export * from "./path";
+export * from "./schema";
