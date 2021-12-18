@@ -14,7 +14,8 @@
   },
   "hosting": {
     "public": "client/out",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "predeploy": ["npm --prefix ./client run build"]
   },
   "storage": {
     "rules": "storage.rules"

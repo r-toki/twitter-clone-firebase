@@ -8,10 +8,10 @@ const _userTweet = "users/:userId/tweets/:tweetId";
 const _likes = "likes";
 const _like = "likes/:likeId";
 
-export const users = () => _users;
-export const user = createPath(_user);
-export const userTweets = createPath(_userTweets);
-export const userTweet = createPath(_userTweet);
+export const usersPath = () => _users;
+export const userPath = createPath(_user);
+export const userTweetsPath = createPath(_userTweets);
+export const userTweetPath = createPath(_userTweet);
 
-export const likes = () => _likes;
-export const like = createPath(_like);
+export const likesPath = () => _likes;
+export const likePath = createPath(_like);
