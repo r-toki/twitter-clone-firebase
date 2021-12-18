@@ -2,8 +2,10 @@
   "name": "client",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
+    "dev": "run-p dev:*",
+    "dev:next": "next dev",
+    "dev:path": "pathpida --ignorePath .gitignore --watch",
+    "build": "pathpida --ignorePath .gitignore && next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -22,6 +24,8 @@
     "eslint": "8.4.0",
     "eslint-config-next": "12.0.5",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "npm-run-all": "^4.1.5",
+    "pathpida": "^0.17.0",
     "postcss": "^8.4.4",
     "tailwindcss": "^2.2.19",
     "typescript": "4.5.2"
