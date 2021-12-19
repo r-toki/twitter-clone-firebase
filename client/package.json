@@ -20,6 +20,7 @@
     "react-firebase-hooks": "^4.0.1",
     "react-hook-form": "^7.22.2",
     "react-use": "^17.3.1",
+    "use-object-url": "^1.0.0",
     "zod": "^3.11.6"
   },
   "devDependencies": {

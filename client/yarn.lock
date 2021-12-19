@@ -4706,6 +4706,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-object-url@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/use-object-url/-/use-object-url-1.0.0.tgz#6fa3464a88f585824a701a4d76fa92d8b573e0a4"
+  integrity sha512-fkCvjOINCKzxMOqG/PNWt3B9zLOmbltM4cihsQO82OClQoixRfSEcA6MaD7eFMGwAQw4BMSRWD8NM31L5e50LQ==
+
 use-subscription@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.5.1.tgz#73501107f02fad84c6dd57965beb0b75c68c42d1"
