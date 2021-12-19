@@ -1,9 +1,0 @@
-import colors from "windicss/colors";
-import { defineConfig } from "windicss/helpers";
-
-export default defineConfig({
-  extract: {
-    include: ["**/*.{jsx,tsx,css}"],
-    exclude: ["node_modules", ".git", ".next"],
-  },
-});
