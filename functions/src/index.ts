@@ -1,10 +1,7 @@
-import * as admin from "firebase-admin";
-import * as functions from "firebase-functions";
+import "./config/firebaseApp";
 
-admin.initializeApp();
+import { functions } from "./infra/functions";
 
-const functionsAtTokyo = functions.region("asia-northeast1");
-
-export const echo = functionsAtTokyo.https.onCall((data, ctx) => {
+export const echo = functions.https.onCall((data, ctx) => {
   return data;
 });
