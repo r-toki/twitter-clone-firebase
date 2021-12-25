@@ -3,7 +3,7 @@
     "source.fixAll": true
   },
   "workbench.colorCustomizations": {
-    "activityBar.background": "#F472B6",
+    "activityBar.background": "#ca8a04",
     "activityBar.foreground": "#000000"
   }
 }
