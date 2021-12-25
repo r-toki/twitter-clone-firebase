@@ -1,5 +1,9 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll": true
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#3b82f6",
+    "activityBar.foreground": "#000000"
   }
 }
