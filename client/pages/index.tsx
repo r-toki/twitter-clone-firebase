@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 
 import { uploadFile } from "@/infra/functions";
-import { addDoc, getDocs, Timestamp } from "firebase/firestore";
+import { addDoc, getDocs, serverTimestamp, Timestamp } from "firebase/firestore";
 import { typedUsersRef } from "@/infra/firestore";
 
 // const toBase64 = (file: File): Promise<string> =>
@@ -50,8 +50,8 @@ export default function () {
       displayName: "",
       selfIntroduction: "",
       avatar: null,
-      createdAt: Timestamp.now(),
-      updatedAt: Timestamp.now(),
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
     }).then(() => {
       getDocs(typedUsersRef()).then((snap) => {
         const users = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
