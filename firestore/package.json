@@ -22,11 +22,9 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "yarn build:web && yarn build:admin",
-    "build:web": "tsc -p tsconfig.web.json",
-    "postbuild:web": "node ./tsc-alias-web.mjs",
-    "build:admin": "tsc -p tsconfig.admin.json",
-    "postbuild:admin": "node ./tsc-alias-admin.mjs",
-    "predeploy:functions": "cpx -C './**' ../functions/firestore"
+    "build:web": "tsc --project tsconfig.web.json && yarn tsc-alias -p tsconfig.web.json",
+    "build:admin": "tsc --project tsconfig.admin.json && yarn tsc-alias -p tsconfig.admin.json",
+    "predeploy:functions": "yarn build && cpx -C './**' ../functions/firestore"
   },
   "exports": {
     "./admin": "./lib/admin/src/index.js",
