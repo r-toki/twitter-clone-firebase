@@ -7,8 +7,8 @@
     "start": "yarn shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "predeploy:functions": "yarn add file:./firestore",
-    "postdeploy:functions": "rimraf ./firestore  && yarn add link:../firestore",
+    "predeploy:functions": "yarn add file:./shared",
+    "postdeploy:functions": "rimraf ./shared  && yarn add link:../shared",
     "test": "jest"
   },
   "engines": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "firebase-admin": "10",
     "firebase-functions": "^3.14.1",
-    "firestore": "link:../firestore"
+    "shared": "link:../shared"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",

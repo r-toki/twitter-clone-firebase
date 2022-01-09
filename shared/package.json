@@ -1,5 +1,5 @@
 {
-  "name": "firestore",
+  "name": "shared",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "build": "yarn build:web && yarn build:admin",
     "build:web": "tsc --project tsconfig.web.json && yarn tsc-alias -p tsconfig.web.json",
     "build:admin": "tsc --project tsconfig.admin.json && yarn tsc-alias -p tsconfig.admin.json",
-    "predeploy:functions": "yarn build && cpx -C './**' ../functions/firestore"
+    "predeploy:functions": "yarn build && cpx -C './**' ../functions/shared"
   },
   "exports": {
     "./admin": "./lib/admin/src/index.js",

@@ -1,8 +1,7 @@
 {
   "functions": {
     "predeploy": [
-      "npm --prefix ./firestore run build",
-      "npm --prefix ./firestore run predeploy:functions",
+      "npm --prefix ./shared run predeploy:functions",
       "npm --prefix ./functions run predeploy:functions",
       "npm --prefix ./functions run build"
     ],
@@ -11,7 +10,10 @@
   "hosting": {
     "public": "client/out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "predeploy": ["npm --prefix ./firestore run build", "npm --prefix ./client run build"]
+    "predeploy": [
+      "npm --prefix ./shared run build",
+      "npm --prefix ./client run build"
+    ]
   },
   "firestore": {
     "rules": "firestore.rules",
