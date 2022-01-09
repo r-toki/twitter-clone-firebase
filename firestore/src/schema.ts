@@ -1,4 +1,4 @@
-import { Timestamp } from "@u-firestore";
+import { Timestamp } from "firestore-web/index";
 
 import { IdOrRef, StorageItem, WithIdAndRef } from "./types";
 

@@ -1,4 +1,4 @@
-import { DocumentReference } from "@u-firestore";
+import { DocumentReference } from "@firestore-universal/index";
 
 export type IdOrRef = "id" | "ref";
 

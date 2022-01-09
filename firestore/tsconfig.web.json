@@ -5,8 +5,8 @@
     "outDir": "./lib/web",
     "baseUrl": ".",
     "paths": {
-      "@u-firestore": ["./u-firestore/web"]
+      "@firestore-universal/*": ["./firestore-web/*"]
     }
   },
-  "include": ["src", "u-firestore/web"]
+  "include": ["src", "firestore-web"]
 }
