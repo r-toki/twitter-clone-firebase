@@ -1,41 +1,27 @@
 import { DocumentReference, Query } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { useCollection, useDocument } from "react-firebase-hooks/firestore";
+import {
+  useCollectionData,
+  useCollectionDataOnce,
+  useDocumentData,
+  useDocumentDataOnce,
+} from "react-firebase-hooks/firestore";
 
-import { WithIdAndRef } from "@/infra/firestore";
-
-export const useDocs = <Data>(query?: Query<Data> | null | undefined) => {
-  const [value, set] = useState<WithIdAndRef<Data>[]>();
-  const [snapshot, loading, error] = useCollection(query);
-
-  useEffect(() => {
-    const newValue = snapshot?.docs.map((doc) => ({ id: doc.id, ref: doc.ref, ...doc.data() }));
-    set(newValue);
-  }, [snapshot]);
-
-  return {
-    value,
-    snapshot,
-    loading,
-    error,
-  };
+export const useGetCollection = <Data>(query?: Query<Data> | null | undefined) => {
+  const res = useCollectionDataOnce<Data, "id", "ref">(query, { idField: "id", refField: "ref" });
+  return res;
 };
 
-export const useDoc = <Data>(docRef?: DocumentReference<Data> | null | undefined) => {
-  const [value, set] = useState<WithIdAndRef<Data>>();
-  const [snapshot, loading, error] = useDocument(docRef);
+export const useGetDocument = <Data>(docRef?: DocumentReference<Data> | null | undefined) => {
+  const res = useDocumentDataOnce<Data, "id", "ref">(docRef, { idField: "id", refField: "ref" });
+  return res;
+};
 
-  useEffect(() => {
-    const newValue = snapshot?.exists()
-      ? { id: snapshot.id, ref: snapshot.ref, ...snapshot.data()! }
-      : undefined;
-    set(newValue);
-  }, [snapshot]);
+export const useSubscribeCollection = <Data>(query?: Query<Data> | null | undefined) => {
+  const res = useCollectionData<Data, "id", "ref">(query, { idField: "id", refField: "ref" });
+  return res;
+};
 
-  return {
-    value,
-    snapshot,
-    loading,
-    error,
-  };
+export const useSubscribeDocument = <Data>(docRef?: DocumentReference<Data> | null | undefined) => {
+  const res = useDocumentData<Data, "id", "ref">(docRef, { idField: "id", refField: "ref" });
+  return res;
 };
