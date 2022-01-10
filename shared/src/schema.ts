@@ -15,6 +15,7 @@ export type UserTweetData = {
   images: StorageItem[];
   createdAt: Timestamp;
   creator: Pick<User, IdOrRef>;
+  likeCount: number;
 };
 
 export type LikeData = {
