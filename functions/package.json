@@ -7,8 +7,8 @@
     "start": "yarn shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "predeploy:functions": "yarn remove link:../shared && yarn add file:./shared",
-    "postdeploy:functions": "rimraf ./shared && yarn remove file:./shared && yarn add link:../shared",
+    "predeploy:functions": "yarn remove shared && yarn add file:./shared",
+    "postdeploy:functions": "rimraf ./shared && yarn remove shared && yarn add link:../shared",
     "test": "jest"
   },
   "engines": {
