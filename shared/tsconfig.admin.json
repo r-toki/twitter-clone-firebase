@@ -5,8 +5,8 @@
     "outDir": "./lib/admin",
     "baseUrl": ".",
     "paths": {
-      "@/_universal/firestore": ["./_web/firestore"],
-      "@/_universal/firestore/*": ["./_web/firestore/*"]
+      "@/_universal/firestore": ["./_admin/firestore"],
+      "@/_universal/firestore/*": ["./_admin/firestore/*"]
     }
   },
   "include": ["src", "_admin"]

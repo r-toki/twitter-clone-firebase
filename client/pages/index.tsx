@@ -1,11 +1,13 @@
 import { Box } from "@chakra-ui/react";
+import { useEffect } from "react";
 
-import { typedUsersRef } from "@/infra/firestore";
-import { useSubscribeCollection } from "@/hooks/useFirestore";
+import { hello } from "@/my-firebase/functions";
 
-export default function () {
-  const [users] = useSubscribeCollection(typedUsersRef());
-  console.log(users?.map((user) => user.displayName));
-
+export default function IndexPage() {
+  useEffect(() => {
+    hello().then((res) => {
+      console.log(res);
+    });
+  }, []);
   return <Box>Home</Box>;
 }
